@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+ <link rel = "stylesheet" type = "text/css" href = "{{static_url('css/style.css')}}"/>
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+<h1 class="text-center heading">Login Page</h1>
+<div class="login-page">
+    <div class="form" >
+        <form class="login-form" action="/login" method="post">
+            <input type="text" name="username" placeholder="username"/>
+            <input type="password" name="password" placeholder="password"/>
+            <button>login</button>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-info">
+                <strong>Login Info!</strong> both username and password are the same.
+            </div>
+              {%if message!='' %}
+                <div class="alert alert-danger">
+                    <strong>{{message}}</strong>
+                </div>
+              {% end if %}
+       </div>
+    </div>
+</div>
+
+<script src="{{static_url('js/login.js')}}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
